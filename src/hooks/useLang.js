@@ -11,7 +11,7 @@ export default function useLang() {
     ctaSecondary: "View Location",
     countdown: "Countdown",
     countdownText:
-      "Every day brings us closer to a beautiful evening filled with music, family, and celebration.",
+      "Every day brings us closer to a beautiful evening filled with family, and celebration.",
     story: "Our Story",
     storyText:
       "What started as a simple connection grew into the kind of love that feels calm, joyful, and meant to be. We would be honored to have you with us as we begin this next chapter together.",
@@ -20,7 +20,7 @@ export default function useLang() {
     day1Date: "Thursday, August 26",
     day1Time: "1:30 PM",
     day1Text:
-      "An intimate evening of dinner, music, and family celebration before the big day.",
+      "An intimate evening of dinner, and family celebration before the big day.",
     day2: "Wedding Ceremony",
     day2Date: "Friday, August 27",
     day2Time: "8:00 PM",
