@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --ink: #2e2622;
+    --muted: #6f5e58;
+    --line: rgba(120, 86, 66, 0.18);
+    --card: rgba(255, 248, 242, 0.74);
+    --card-strong: rgba(255, 251, 247, 0.88);
+    --rose: #8a5f63;
+    --gold: #b69055;
+    --shadow: 0 28px 80px rgba(55, 30, 18, 0.14);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: "Cairo", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at top, rgba(255, 236, 225, 0.7), transparent 35%),
+      linear-gradient(180deg, #f6ece4 0%, #f3e6dc 45%, #efe1d7 100%);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background: rgba(182, 144, 85, 0.28);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 pb-16 pt-8 sm:px-6 sm:pb-20 lg:gap-10 lg:px-8 lg:pt-12;
+  }
+
+  .section-card {
+    background: linear-gradient(180deg, var(--card-strong), var(--card));
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    @apply relative overflow-hidden rounded-[2rem] backdrop-blur-xl;
+  }
+
+  .section-card::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(182, 144, 85, 0.14);
+    border-radius: 1.4rem;
+    pointer-events: none;
+  }
+
+  .section-inner {
+    @apply relative z-10 p-6 sm:p-8 lg:p-10;
+  }
+
+  .eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 rounded-full px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.34em];
+    color: var(--rose);
+    background: rgba(242, 217, 209, 0.52);
+    border: 1px solid rgba(138, 95, 99, 0.14);
+  }
+
+  .section-title {
+    @apply font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl;
+    font-family: "Playfair Display", serif;
+    color: #2d211c;
+    text-wrap: balance;
+  }
+
+  .section-copy {
+    @apply mt-4 max-w-2xl text-sm leading-7 sm:text-base;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  .pill-button {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-300;
+  }
+
+  .pill-button-primary {
+    background: linear-gradient(135deg, #b69055, #cba673);
+    color: #fffaf5;
+    box-shadow: 0 16px 30px rgba(182, 144, 85, 0.28);
+  }
+
+  .pill-button-secondary {
+    background: rgba(255, 255, 255, 0.46);
+    border: 1px solid rgba(120, 86, 66, 0.15);
+    color: var(--ink);
+  }
+
+  .ornament {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+
+  .invitation-panel {
+    @apply mx-auto text-center;
+  }
+
+  .soft-highlight {
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.72), transparent 58%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 248, 242, 0.08));
+  }
+}
